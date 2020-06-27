@@ -27,9 +27,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class      instance    title       			tags mask     isfloating   monitor */
+	{ NULL,       NULL,       "Picture in picture", 0,    		  1,           -1 },
+	{ "Gimp",     NULL,       NULL,      			0,            1,           -1 },
+	{ "Firefox",  NULL,       NULL,      			1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -116,7 +117,7 @@ static Key keys[] = {
 	{ MODKEY,						XK_Tab,    view,           {0} }, // previous actives tags
 	{ MODKEY,             			XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },
-	// { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	// { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	// { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	// Layouts and tags
