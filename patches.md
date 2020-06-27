@@ -9,6 +9,7 @@
 - [shiftview](patches/shiftview.patch)
 - [modified singular borders](patches/singularborders.patch)
 - [togglefullscreen](patches/togglefullscreen.patch)
+- [Xresources](https://dwm.suckless.org/patches/xresources/)
 
 ## Interesting ones
 
