@@ -7,3 +7,8 @@
 - [noborder](https://dwm.suckless.org/patches/noborder/)
 - [save floats patch](https://dwm.suckless.org/patches/save_floats/)
 - [shiftview](patches/shiftview.patch)
+- [modified singular borders](patches/singularborders.patch)
+
+## Interesting ones
+
+- https://dwm.suckless.org/patches/warp/
