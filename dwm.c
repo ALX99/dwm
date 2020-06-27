@@ -140,6 +140,8 @@ typedef struct {
 	const char *title;
 	unsigned int tags;
 	int isfloating;
+	int issticky;
+	int floatx, floaty, floatw, floath;
 	int monitor;
 } Rule;
 
@@ -317,7 +319,18 @@ applyrules(Client *c)
 		&& (!r->class || strstr(class, r->class))
 		&& (!r->instance || strstr(instance, r->instance)))
 		{
-			c->isfloating = r->isfloating;
+			c->issticky = r->issticky;
+			if (r->isfloating){
+				c->isfloating = r->isfloating;
+				if (r->floatx >= 0 && r->floaty >= 0){
+					c->x = r->floatx;
+					c->y = r->floaty;
+				}
+				if (r->floath >= 0 && r->floatw >= 0){
+					c->w = r->floatw;
+					c->h = r->floath;
+				}
+			}
 			c->tags |= r->tags;
 			for (m = mons; m && m->num != r->monitor; m = m->next);
 			if (m)

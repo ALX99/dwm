@@ -14,9 +14,9 @@ static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
 static char *colors[][3] = {
-       /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+	   /*               fg           bg           border   */
+	   [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+	   [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
 /* tagging */
@@ -27,10 +27,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       			tags mask     isfloating   monitor */
-	{ NULL,       NULL,       "Picture in picture", 0,    		  1,           -1 },
-	{ "Gimp",     NULL,       NULL,      			0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,      			1 << 8,       0,           -1 },
+
+	/* class	instance	title			tags mask	isfloating  issticky	float x,y w,h				monitor */
+	{ NULL,		NULL,"Picture in picture",	0,    	    1,          1,			1920-854,1080-480,854,480  	-1 },
 };
 
 /* layout(s) */

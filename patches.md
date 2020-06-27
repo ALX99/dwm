@@ -10,6 +10,7 @@
 - [modified singular borders](patches/singularborders.patch)
 - [togglefullscreen](patches/togglefullscreen.patch)
 - [Xresources](https://dwm.suckless.org/patches/xresources/)
+- [floatrules](patches/floatrules.patch) (custom, requires the sticky patch)
 
 ## Interesting ones
 
