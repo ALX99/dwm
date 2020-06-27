@@ -105,6 +105,7 @@ static Key keys[] = {
 	{ MODKEY,						XK_y,      setlayout,      {.v = &layouts[1]} }, // floating
 	{ MODKEY,						XK_p, 	   setlayout,      {0} }, // previous layout 
 	{ MODKEY,						XK_t,  	   togglefloating, {0} }, // toggle floating for a single window
+	{ MODKEY,						XK_f,      togglefullscr,  {0} },
 	{ MODKEY|ShiftMask,				XK_Tab,    view,           {.ui = ~0 } }, // view everything
 	// Monitors
 	{ MODKEY,						XK_comma,  focusmon,       {.i = -1 } },
