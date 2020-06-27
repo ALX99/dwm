@@ -1,0 +1,35 @@
+diff --git a/dwm.c b/dwm.c
+index 9bfd7e1..16f8037 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -214,6 +214,7 @@ static void tile(Monitor *);
+ static void togglebar(const Arg *arg);
+ static void togglefloating(const Arg *arg);
+ static void togglesticky(const Arg *arg);
++static void togglefullscr(const Arg *arg);
+ static void toggletag(const Arg *arg);
+ static void toggleview(const Arg *arg);
+ static void unfocus(Client *c, int setfocus);
+@@ -843,7 +844,7 @@ focusstack(const Arg *arg)
+ {
+ 	Client *c = NULL, *i;
+ 
+-	if (!selmon->sel)
++	if (!selmon->sel || selmon->sel->isfullscreen)
+ 		return;
+ 	if (arg->i > 0) {
+ 		for (c = selmon->sel->next; c && !ISVISIBLE(c); c = c->next);
+@@ -1759,6 +1760,13 @@ togglesticky(const Arg *arg)
+ 	arrange(selmon);
+ }
+ 
++void
++togglefullscr(const Arg *arg)
++{
++  if(selmon->sel)
++    setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
++}
++
+ void
+ toggletag(const Arg *arg)
+ {
