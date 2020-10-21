@@ -5,8 +5,8 @@ static unsigned int borderpx        = 3;        /* border pixel of windows */
 static unsigned int snap            = 32;       /* snap pixel */
 static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "Cascadia Mono:pixelsize=12:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Cascadia Mono:pixelsize=12:antialias=true:autohint=true";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -20,7 +20,7 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4" };
+static const char *tags[] = { "一", "二", "三", "四", "五" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -29,7 +29,9 @@ static const Rule rules[] = {
 	 */
 
 	/* class	instance	title			tags mask	isfloating  issticky	float x,y w,h				monitor */
-	{ NULL,		NULL,"Picture in picture",	0,    	    1,          1,			1920-854,1080-480,854,480  	-1 },
+	{ NULL,		NULL,"Picture in picture",	0,    	    1,          1,			1920-854,1080-480,854,480, 	-1 },
+	{ "Gcolor3",NULL,       NULL,	        0,         	1,          0,			-1,-1,-1,-1,                -1 },
+
 };
 
 /* layout(s) */
@@ -123,7 +125,7 @@ static Key keys[] = {
 	{ MODKEY,						XK_l,      setlayout,      {.v = &layouts[0]} },// tiling
 	{ MODKEY,						XK_u,      setlayout,      {.v = &layouts[2]} }, // monocle
 	{ MODKEY,						XK_y,      setlayout,      {.v = &layouts[1]} }, // floating
-	{ MODKEY,						XK_p, 	   setlayout,      {0} }, // previous layout 
+	{ MODKEY,						XK_p, 	   setlayout,      {0} }, // previous layout
 	{ MODKEY,						XK_t,  	   togglefloating, {0} }, // toggle floating for a single window
 	{ MODKEY,						XK_f,      togglefullscr,  {0} },
 	{ MODKEY|ShiftMask,				XK_Tab,    view,           {.ui = ~0 } }, // view everything
@@ -159,4 +161,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
