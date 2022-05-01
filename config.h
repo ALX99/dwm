@@ -75,12 +75,15 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 #include "shift-tools.c"
+#include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_n,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_e,      movestack,      {.i = -1 } },
 	{ MODKEY,             			XK_i,	   shiftview,      { .i = +1 } },
 	{ MODKEY,             			XK_k,	   shiftview,      { .i = -1 } },
 	{ MODKEY|ShiftMask,				XK_k,      shiftboth,       {.i = -1 } },
