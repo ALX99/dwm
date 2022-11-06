@@ -11,11 +11,14 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char green[]           = "#4dcc8e";
+static const char bar_bg[]          = "#100d0e";
+static const char pink[]            = "#f8459a";
+static const char white[]           = "#ffffff";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	/*               fg,    bg,     border   */
+	[SchemeNorm] = { white, bar_bg, col_gray2 },
+	[SchemeSel]  = { green, bar_bg, green  },
 };
 
 /* tagging */
@@ -71,7 +74,7 @@ Mod5Mask    |   128 | ???
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bar_bg, "-nf", white, "-sb", bar_bg, "-sf", green, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include "shift-tools.c"
@@ -134,4 +137,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
